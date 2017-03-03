@@ -1,2 +1,26 @@
-# Disable the startup message
+# Automatically detach on hangup.
+autodetach on
+
+# Don't display the copyright page
 startup_message off
+
+# Enable 256 color term
+term xterm-256color
+
+# Change default scrollback value for new windows
+defscrollback 65536
+
+# emulate .logout message
+pow_detach_msg "Screen session of \$LOGNAME \$:cr:\$:nl:ended."
+
+# status line
+#hardstatus alwayslastline " %c | %Y%m%d | %w "
+hardstatus alwayslastline 
+hardstatus string '%{= Kd} %{= Kd}%-w%{= Kr}[%{= KW}%n %t%{= Kr}]%{= Kd}%+w %-= %{KG} %H%{KW}|%{KY}%101`%{KW}|%D %M %d %Y%{= Kc} %C%A%{-}'
+#
+
+# UTF8 support
+defutf8 on
+
+# Enable non-blocking mode to better cope with flaky ssh connections.
+defnonblock 5
